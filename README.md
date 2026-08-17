@@ -1,6 +1,8 @@
 # Easy-App 移动端自动化测试框架
 
-基于 Appium + pytest + Allure + JSON/Excel 的极简移动端自动化测试框架。
+> **Easy-App Appium Testing** — Appium + pytest + Allure mobile UI automation
+> framework. Data-driven test cases in JSON/Excel, zero code changes for
+> Android & iOS. 极简移动端自动化测试框架。
 
 作者：孙文龙
 
