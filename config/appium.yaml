@@ -1,0 +1,36 @@
+# Appium 服务配置
+
+# ==================== 服务路径 ====================
+# Appium 可执行文件路径（留空则自动查找：项目 pkg/appium > 系统 PATH）
+# 本地安装方式：cd pkg/appium && npm install
+# appium_server_path: pkg/appium/node_modules/.bin/appium.cmd
+appium_server_path: ""
+
+# ==================== 服务地址 ====================
+server_host: 127.0.0.1              # Appium 服务主机
+server_port: 4723                   # Appium 服务端口
+base_url: http://localhost:4723     # Appium 连接地址（自动生成，可留空）
+
+# ==================== 启动模式 ====================
+# 启动模式: window（独立窗口）/ background（后台线程）
+# - window: 打开独立 cmd 窗口，可见日志，不阻塞主进程（推荐）
+# - background: 后台运行，通过线程消费输出，无窗口
+start_mode: window
+
+# ==================== 超时配置 ====================
+auto_start_server: true             # 自动启动 Appium 服务
+start_timeout: 40                   # 启动等待超时时间（秒）
+command_timeout: 300                # Appium newCommandTimeout（秒）
+session_http_timeout: 180           # 创建会话等 HTTP 读超时（秒）
+wait_activity_timeout: 10           # 等待 Activity 超时时间（秒）
+
+# ==================== 日志配置 ====================
+log_level: INFO                     # Appium 日志级别: debug / info / warning / error
+
+# ==================== Android 环境 ====================
+# android_home 必须是「包含 platform-tools 目录」的那一层，不能填 platform-tools 本身。
+# 若在项目内本地解压 platform-tools 到 pkg/platform-tools，可填 pkg（相对项目根，运行时会转成绝对路径）。
+# 使用本机完整 SDK 时示例: C:\Users\你的用户名\AppData\Local\Android\Sdk
+# 留空或删除本行则不覆盖环境变量，沿用系统已配置的 ANDROID_HOME
+# android_home: pkg
+android_home: ""

@@ -1,0 +1,91 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+*.log
+
+# Screenshots
+screenshots/
+
+# Allure Reports
+allure-results/
+allure-report/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 所有以 . 开头的目录/文件（AI 工具、IDE、密钥、系统配置等一律不进版本库）
+.*/
+
+# Secrets / credentials (绝不提交)
+.secrets/
+*.token
+*.key
+
+# 内存 / 项目记忆
+.MemoryForAI/
+
+# 本地调试脚本（不入库）
+run.bat
+test_appium_start_mode.py
+diagnose_appium.py
+
+# ==================== pkg 二进制目录（体积过大，不纳入版本库） ====================
+# Appium 依赖与可执行文件（源码提交 pkg/appium/package.json + package-lock.json，
+# 使用者在本地执行 `cd pkg/appium && npm install` 即可复现）
+pkg/appium/node_modules/
+pkg/platform-tools/
+pkg/appuicheck/
+pkg/allurec/
+
+# 保留 pkg/appium 的 npm 清单
+!pkg/appium/package.json
+!pkg/appium/package-lock.json
+
+# Test data (optional, uncomment if needed)
+# data/*.json
+# data/*.xlsx
+
+# Temporary files
+*.tmp
+*.temp

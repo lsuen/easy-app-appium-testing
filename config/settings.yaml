@@ -1,0 +1,69 @@
+# Easy-App 配置文件
+# 平台配置: Android / iOS
+
+# ==================== 基础配置 ====================
+platform: Android                    # 平台类型: Android / iOS
+device_name: emulator-5554          # 设备名称或 ID
+automation_name: UiAutomator2       # 自动化引擎: UiAutomator2 / XCUITest
+
+# ==================== 应用配置 ====================
+# app_path: pkg/app-debug.apk         # 应用文件路径（留空则使用已安装应用）
+app_package: com.ss.android.article.news        # Android 包名（今日头条）
+app_activity: .MainActivity         # Android 启动 Activity
+# bundle_id: com.example.app       # iOS Bundle ID（iOS 使用）
+
+# ==================== Appium 服务配置 ====================
+# appium_server_path: pkg/appium/node_modules/.bin/appium.cmd  # 本地安装路径（cd pkg/appium && npm install）
+# 留空则自动查找：项目 pkg/appium > 系统 PATH
+appium_server_path: ""
+base_url: http://localhost:4723     # Appium 服务地址
+command_timeout: 300                 # Appium newCommandTimeout（秒），勿填毫秒
+session_http_timeout: 180           # 创建会话等 HTTP 读超时（秒），过短会误报超时
+wait_activity_timeout: 10           # 等待 Activity 超时时间（秒）
+auto_start_server: true             # 自动启动 Appium 服务
+server_host: 127.0.0.1              # Appium 服务主机
+server_port: 4723                   # Appium 服务端口
+
+# ==================== Android 特有配置 ====================
+# android_home 必须是「包含 platform-tools 目录」的那一层，不能填 platform-tools 本身。
+# 项目内若解压到 pkg/platform-tools，则填 pkg（相对项目根，运行时会转成绝对路径）。
+# 使用本机完整 SDK 时示例: C:\Users\你的用户名\AppData\Local\Android\Sdk
+# 留空或删除本行则不覆盖环境变量，沿用系统已配置的 ANDROID_HOME
+android_home: ""
+no_reset: false                     # 不重置应用状态
+unicode_keyboard: true              # 启用 Unicode 输入法
+reset_keyboard: true                # 测试后重置输入法
+# wait_activity_timeout: 10         # 等待 Activity 超时
+
+# ==================== iOS 特有配置 ====================
+# udid:                            # iOS 设备 UDID
+# platform_version: 15.0           # iOS 版本
+# bundle_id: com.example.app       # iOS 应用 Bundle ID
+
+# ==================== 测试配置 ====================
+timeout: 10                         # 元素查找超时时间（秒）
+headless: false                     # 无头模式（部分驱动支持）
+log_level: INFO                     # 日志级别: DEBUG / INFO / WARNING / ERROR
+robust_mode: true                   # 启用三级防御链（鲁棒模式）
+
+# ==================== 设备配置示例 ====================
+# Android 模拟器
+# device_name: emulator-5554
+# platform: Android
+
+# Android 真机
+# device_name: 你的设备序列号
+# platform: Android
+# 获取序列号: adb devices
+
+# iOS 模拟器
+# device_name: iPhone 14
+# platform: iOS
+# udid: 模拟器 UDID
+# platform_version: 16.0
+
+# iOS 真机
+# device_name: iPhone
+# platform: iOS
+# udid: 真机 UDID
+# automation_name: XCUITest

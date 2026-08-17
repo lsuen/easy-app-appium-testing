@@ -1,0 +1,37 @@
+[
+  {
+    "id": "TC_CAR_001",
+    "name": "当贝市场搜索功能测试",
+    "type": "workflow",
+    "app_package": "com.dangbeimarket.car",
+    "expected_type": "none",
+    "steps": [
+      {
+        "action": "wait",
+        "selector": "com.dangbeimarket.car:id/view_secondary_menu_search_sl",
+        "by": "id",
+        "timeout": 15,
+        "desc": "等待搜索图标加载完成"
+      },
+      {
+        "action": "click",
+        "selector": "com.dangbeimarket.car:id/view_secondary_menu_search_sl",
+        "by": "id",
+        "desc": "点击搜索图标"
+      },
+      {
+        "action": "wait",
+        "timeout": 3,
+        "desc": "等待页面跳转"
+      },
+      {
+        "action": "back",
+        "desc": "点击返回键"
+      },
+      {
+        "action": "screenshot",
+        "desc": "返回后截图"
+      }
+    ]
+  }
+]

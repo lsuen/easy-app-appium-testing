@@ -1,0 +1,28 @@
+# 测试运行配置
+
+# ==================== 超时配置 ====================
+timeout: 10                         # 元素查找超时时间（秒）
+
+# ==================== 运行模式 ====================
+headless: false                     # 无头模式（部分驱动支持）
+
+# ==================== 日志配置 ====================
+log_level: INFO                     # 日志级别: DEBUG / INFO / WARNING / ERROR
+
+# ==================== 鲁棒模式 ====================
+robust_mode: true                   # 启用三级防御链（鲁棒模式）
+
+# ==================== Allure 报告配置 ====================
+# allure 命令路径（留空则自动查找：项目 pkg/allurec/bin > 系统 PATH）
+# 安装方式：pip install allure-commandline
+allure_cmd: ""
+# Allure 原始数据目录
+allure_results_dir: allure-results
+# Allure 报告输出目录
+allure_report_dir: allure-report
+# 生成报告时是否清理旧报告
+allure_clean: true
+# 测试完成后自动生成报告
+auto_generate_report: true
+# 生成完成后自动打开报告
+auto_open_report: false

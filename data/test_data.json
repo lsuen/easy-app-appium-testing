@@ -1,0 +1,136 @@
+[
+  {
+    "id": "TC001",
+    "name": "登录功能测试",
+    "type": "workflow",
+    "platform": "All",
+    "description": "测试用户登录流程，包括输入用户名、密码和点击登录按钮",
+    "priority": "P0",
+    "steps": [
+      {
+        "action": "input",
+        "selector": "com.example.app:id/username_edit",
+        "by": "id",
+        "value": "testuser"
+      },
+      {
+        "action": "input",
+        "selector": "com.example.app:id/password_edit",
+        "by": "id",
+        "value": "123456"
+      },
+      {
+        "action": "click",
+        "selector": "com.example.app:id/login_btn",
+        "by": "id"
+      },
+      {
+        "action": "wait",
+        "selector": "com.example.app:id/welcome_text",
+        "by": "id",
+        "timeout": 10
+      }
+    ],
+    "expected_type": "text",
+    "expected_value": "欢迎",
+    "by": "id"
+  },
+  {
+    "id": "TC002",
+    "name": "点击按钮测试",
+    "type": "click",
+    "platform": "Android",
+    "description": "测试按钮点击功能",
+    "priority": "P1",
+    "selector": "com.example.app:id/submit_btn",
+    "by": "id",
+    "expected_type": "element",
+    "expected_value": "com.example.app:id/result_text"
+  },
+  {
+    "id": "TC003",
+    "name": "滑动列表测试",
+    "type": "swipe",
+    "platform": "All",
+    "description": "测试列表向上滑动功能",
+    "priority": "P1",
+    "direction": "up",
+    "duration": 500,
+    "expected_type": "element",
+    "expected_value": "com.example.app:id/bottom_item",
+    "selector": "com.example.app:id/bottom_item",
+    "by": "id"
+  },
+  {
+    "id": "TC004",
+    "name": "输入框文本验证",
+    "type": "input",
+    "platform": "Android",
+    "description": "测试输入文本并验证",
+    "priority": "P1",
+    "selector": "com.example.app:id/search_edit",
+    "by": "id",
+    "value": "测试关键词",
+    "expected_type": "value",
+    "expected_value": "测试关键词"
+  },
+  {
+    "id": "TC005",
+    "name": "滚动到指定元素",
+    "type": "scroll",
+    "platform": "All",
+    "description": "测试滚动功能，滚动到目标元素",
+    "priority": "P2",
+    "selector": "com.example.app:id/target_element",
+    "by": "id",
+    "expected_type": "presence",
+    "expected_value": "com.example.app:id/target_element"
+  },
+  {
+    "id": "TC006",
+    "name": "长按操作测试",
+    "type": "long_click",
+    "platform": "Android",
+    "description": "测试长按元素触发上下文菜单",
+    "priority": "P2",
+    "selector": "com.example.app:id/list_item",
+    "by": "id",
+    "duration": 2000,
+    "expected_type": "element",
+    "expected_value": "com.example.app:id/context_menu"
+  },
+  {
+    "id": "TC007",
+    "name": "返回键测试",
+    "type": "workflow",
+    "platform": "Android",
+    "description": "测试返回键功能",
+    "priority": "P1",
+    "steps": [
+      {
+        "action": "click",
+        "selector": "com.example.app:id/next_page_btn",
+        "by": "id"
+      },
+      {
+        "action": "back"
+      }
+    ],
+    "expected_type": "element",
+    "expected_value": "com.example.app:id/home_btn"
+  },
+  {
+    "id": "TC008",
+    "name": "坐标点击测试",
+    "type": "tap",
+    "platform": "All",
+    "description": "测试指定坐标点击",
+    "priority": "P2",
+    "x": 500,
+    "y": 1000,
+    "expected_type": "element",
+    "expected_value": "com.example.app:id/tapped_element",
+    "selector": "com.example.app:id/tapped_element",
+    "by": "id"
+  }
+]

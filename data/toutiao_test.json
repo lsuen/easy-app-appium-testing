@@ -1,0 +1,88 @@
+[
+  {
+    "id": "TC_TOUTIAO_001",
+    "name": "启动并等待首页加载",
+    "app_package": "com.ss.android.article.news",
+    "steps": [
+      {
+        "action": "wait",
+        "selector": {"text": "推荐"},
+        "timeout": 15,
+        "desc": "等待首页推荐Tab出现"
+      }
+    ]
+  },
+  {
+    "id": "TC_TOUTIAO_002",
+    "name": "搜索功能测试",
+    "app_package": "com.ss.android.article.news",
+    "steps": [
+      {
+        "action": "click",
+        "selector": {"id": "com.ss.android.article.news:id/iv_search"},
+        "desc": "点击搜索图标"
+      },
+      {
+        "action": "input",
+        "selector": {"id": "com.ss.android.article.news:id/search_edit_text"},
+        "value": "人工智能",
+        "desc": "输入搜索词"
+      },
+      {
+        "action": "wait",
+        "selector": {"text": "搜索"},
+        "timeout": 10,
+        "desc": "等待搜索结果列表加载"
+      },
+      {
+        "action": "screenshot",
+        "desc": "截图：搜索结果页"
+      }
+    ]
+  },
+  {
+    "id": "TC_TOUTIAO_003",
+    "name": "切换视频 Tab",
+    "app_package": "com.ss.android.article.news",
+    "steps": [
+      {
+        "action": "click",
+        "selector": {"text": "视频"},
+        "desc": "点击底部视频Tab"
+      },
+      {
+        "action": "wait",
+        "selector": {"class": "android.widget.ListView"},
+        "timeout": 10,
+        "desc": "等待视频列表加载"
+      }
+    ]
+  },
+  {
+    "id": "TC_TOUTIAO_004",
+    "name": "阅读一篇新闻并返回",
+    "app_package": "com.ss.android.article.news",
+    "steps": [
+      {
+        "action": "click",
+        "selector": {"class": "android.widget.TextView", "text": ".*"},
+        "index": 2,
+        "desc": "点击列表中的第三条新闻（跳过置顶）"
+      },
+      {
+        "action": "wait",
+        "selector": {"class": "android.webkit.WebView"},
+        "timeout": 15,
+        "desc": "等待文章详情页加载"
+      },
+      {
+        "action": "screenshot",
+        "desc": "截图：文章详情页"
+      },
+      {
+        "action": "back",
+        "desc": "点击返回键"
+      }
+    ]
+  }
+]

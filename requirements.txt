@@ -1,0 +1,10 @@
+# 核心依赖
+Appium-Python-Client>=3.0.0
+
+# 数据处理
+openpyxl>=3.1.0
+pyyaml>=6.0
+
+# 测试框架 & 报告
+pytest>=7.0.0
+allure-pytest>=2.13.0

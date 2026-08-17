@@ -1,0 +1,21 @@
+# 设备与应用配置
+
+# ==================== 平台配置 ====================
+platform: Android                    # 平台类型: Android / iOS
+device_name: emulator-5554          # 设备名称或 ID
+automation_name: UiAutomator2       # 自动化引擎: UiAutomator2 / XCUITest
+
+# ==================== Android 应用配置 ====================
+# app_path: pkg/app-debug.apk         # 应用文件路径（留空则使用已安装应用）
+app_package: com.ss.android.article.news        # Android 包名（今日头条）
+app_activity: .MainActivity         # Android 启动 Activity
+
+# ==================== Android 特有配置 ====================
+no_reset: false                     # 不重置应用状态
+unicode_keyboard: true              # 启用 Unicode 输入法
+reset_keyboard: true                # 测试后重置输入法
+
+# ==================== iOS 配置 ====================
+# udid:                            # iOS 设备 UDID
+# platform_version: 15.0           # iOS 版本
+# bundle_id: com.example.app       # iOS 应用 Bundle ID
